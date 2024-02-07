@@ -109,9 +109,4 @@ describe('Go to Projects Page', () => {
     const dashboardElement = cy.get('body').find('h2.text-xl.font-semibold')
     dashboardElement.should('contain', 'Client Vault')
   });
-
-  // it.only('should change client type to SoleProprietorship then create client', () => {
-    
-  // });
-  
 })
