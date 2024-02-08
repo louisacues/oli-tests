@@ -20,10 +20,10 @@ describe('Go to Projects Page', () => {
   })
   it('should be able to see Client Tasks', () => {
     goToProjectPage()
+    cy.wait(3000)
     const projectGetToClientTask = cy.get('div.flex.flex-col.w-full')
-    projectGetToClientTask.within(() => {
-      cy.contains('Anthony Corp').click()
-    })
+    projectGetToClientTask.contains('Anthony Corp').click()
+    
     
     const projectHeaderElement = cy.get('body').find('h1.text-base.font-semibold.text-gray-900').first()
     projectHeaderElement.should('contain', 'Client Tasks')   
@@ -31,11 +31,10 @@ describe('Go to Projects Page', () => {
 
   it('add client task, details and comment, and delete client tasks', () => {
     goToProjectPage()
-    const projectGetToClientTask = cy.get('div.flex.flex-col.w-full')
-    projectGetToClientTask.within(() => {
-      cy.contains('Anthony Corp').click()
-    })
     cy.wait(2000)
+    const projectGetToClientTask = cy.get('div.flex.flex-col.w-full')
+    projectGetToClientTask.contains('Anthony Corp').click()
+    
     const projectLinkToClientTask = cy.get('.flex.bg-white.shadow-bottom-blue')
     projectLinkToClientTask.within(() =>{
       cy.get('a').contains('Client Task').click()
