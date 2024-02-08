@@ -20,8 +20,10 @@ describe('Go to Projects Page', () => {
   })
   it('should be able to see Client Tasks', () => {
     goToProjectPage()
-    const projectGetToClientTask = cy.get('div.flex.items-center.col-span-4.text-gray-900.font-light.px-3.whitespace-nowrap').eq(2)
-    projectGetToClientTask.click()
+    const projectGetToClientTask = cy.get('div.flex.flex-col.w-full')
+    projectGetToClientTask.within(() => {
+      cy.contains('Anthony Corp').click()
+    })
     
     const projectHeaderElement = cy.get('body').find('h1.text-base.font-semibold.text-gray-900').first()
     projectHeaderElement.should('contain', 'Client Tasks')   
@@ -29,8 +31,10 @@ describe('Go to Projects Page', () => {
 
   it('add client task, details and comment, and delete client tasks', () => {
     goToProjectPage()
-    const projectGetToClientTask = cy.get('div.flex.items-center.col-span-4.text-gray-900.font-light.px-3.whitespace-nowrap').eq(2)
-    projectGetToClientTask.click()
+    const projectGetToClientTask = cy.get('div.flex.flex-col.w-full')
+    projectGetToClientTask.within(() => {
+      cy.contains('Anthony Corp').click()
+    })
     cy.wait(2000)
     const projectLinkToClientTask = cy.get('.flex.bg-white.shadow-bottom-blue')
     projectLinkToClientTask.within(() =>{
@@ -65,7 +69,7 @@ describe('Go to Projects Page', () => {
 
     const addComment =cy.get('div.relative > button').contains('COMMENT')
     addComment.click()
-
+    cy.wait(3000)
     const deleteClientTask = cy.contains('button','Delete')
     deleteClientTask.click()
 
