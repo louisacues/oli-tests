@@ -17,7 +17,7 @@ describe('Add Task on Projects Page', () => {
     it('should be able to add task and description then delete', () => {
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
-            cy.contains('Stephen Juridico').click()
+            cy.contains('Anthony Corp').click()
         })
         const addTaskButton = cy.contains('Add Task')
         addTaskButton.click()
@@ -52,7 +52,7 @@ describe('Add Task on Projects Page', () => {
     it('should be able to add task, description, and review notes then delete', () => {
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
-            cy.contains('Stephen Juridico').click()
+            cy.contains('Anthony Corp').click()
         })
         const addTaskButton = cy.contains('Add Task')
         addTaskButton.click()
@@ -95,7 +95,7 @@ describe('Add Task on Projects Page', () => {
     it('should be able to add task, description, review notes, and add comment then delete', () => {
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
-            cy.contains('Stephen Juridico').click()
+            cy.contains('Anthony Corp').click()
         })
         const addTaskButton = cy.contains('Add Task')
         addTaskButton.click()
