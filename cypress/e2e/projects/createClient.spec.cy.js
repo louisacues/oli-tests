@@ -91,7 +91,8 @@ describe('Go to Projects Page', () => {
 
     cy.get('#certificateOfIncorporationNumber').type('123 123 123');
     cy.get('#TIN').type('123 123 123');
-    cy.get('#contactPersonEmail').type('sampleEmail4@google.com');
+    let random = Math.floor(Math.random() * 100000);
+    cy.get('#contactPersonEmail').type('sampleEmail1'+random+'@google.com');
     
     cy.get('#natureOfBusiness').select('Manufacturing');
     cy.get('#incomeTaxOption').type('sample');
