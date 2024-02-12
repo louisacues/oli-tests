@@ -16,27 +16,25 @@ describe('Go to Projects', () => {
     projectHeaderElement.should('contain', 'Projects')
 
     const searchClientElement = cy.get('body').find('input[placeholder="Search by Client Name or Project Title"]')
+    searchClientElement.should('exist')
     searchClientElement.type(projectName)
-    /* cy.get('input[placeholder="Search by Client Name or Project Title"]').type(projectName) */
 
     const projectTask = cy.get('.max-w-full')
       projectTask.within(() => {
         cy.contains(projectName).click()
       })    
-    /* cy.get(':nth-child(3) > .col-span-4').then(element => element.click()) */
-    
+
     const manageButton = cy.contains('button', 'Manage')
+    manageButton.should('contain', 'Manage')
     manageButton.click()
-    /* cy.contains('button','Manage').click();  */
 
     const deleteButton = cy.contains('a', 'Delete Project')
+    deleteButton.should('contain', 'Delete Project')
     deleteButton.click()
-    /* cy.contains('a','Delete Project').click();  */
 
     const confirmationButton = cy.contains('button', "Yes, I'm sure")
+    confirmationButton.should('exist')
     confirmationButton.click()
-    /* cy.get('button[type="button"][class*="bg-red"]').contains("Yes, I'm sure").click(); */ 
-    
   })
 
 })

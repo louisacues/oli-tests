@@ -16,6 +16,7 @@ it('should be able to delete the deleted project on the recycle bin', async () =
     projectHeaderElement.should('contain', 'Recycle Bin')
 
     const recycleBinSearchElement = cy.get('body').find('#input-search')
+    recycleBinSearchElement.should('exist')
     recycleBinSearchElement.type(projectName)
     /* cy.get('#input-search').type(projectName) */
 
