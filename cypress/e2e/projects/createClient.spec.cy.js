@@ -202,27 +202,21 @@ describe('Create Client Page Tests', () => {
     cy.get(companyName).should('have.value','sample corp');
     cy.get(zipCode).should('have.value','2200');
     cy.get(SSSNo).should('have.value','123 123 123');
-
     cy.get(tradeName).should('have.value','sample corp');
     cy.get(contactBusinessNumber).should('have.value','0917 123 1234');
     cy.get(HDMFNo).should('have.value','123 123 123');
-
     cy.get(contactBusinessEmail).should('have.value','samplecorp@gmail.com');
     cy.get(contactPersonFirstName).should('have.value','John');
     cy.get(contactPersonLastName).should('have.value','Doe');
-
     cy.get(dateOfIncorporation).should('have.value','2024-01-01');
     cy.get(RDO).should('have.value','sample');
     cy.get(contactPersonNumber).should('have.value','0917 123 1234');
-
     cy.get(certificateOfIncorporationNumber).should('have.value','123 123 123');
     cy.get(TIN).should('have.value','123 123 123');
-    cy.get(contactPersonEmail).should('have.value','sampleEmail1'+randomNumber+'@google.com');
-    
+    cy.get(contactPersonEmail).should('have.value','sampleEmail1'+randomNumber+'@google.com');    
     cy.get(natureOfBusiness).should('have.value','Manufacturing');
     cy.get(incomeTaxOption).should('have.value','sample');
     cy.get(birthdate).should('have.value','2010-01-01');
-
     cy.get(principalBusinessAddress).should('have.value','1 ABC Street Barangay New Manila');
     cy.get(PHICNo).should('have.value','123 123 123');
     cy.get(startDate).should('have.value','2024-01-01');
