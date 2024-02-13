@@ -11,13 +11,13 @@ describe('Go to Projects', () => {
     login()
     const projectHrefElement = cy.get('body').find('a[href="/projects"]')
     projectHrefElement.click()
-    cy.wait(2000)
+    
     const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
     projectHeaderElement.should('contain', 'Projects')
 
-    const searchClientElement = cy.get('body').find('input[placeholder="Search by Client Name or Project Title"]')
-    searchClientElement.should('exist')
-    searchClientElement.type(projectName)
+    const searchClientInProjectElement = cy.get('body').find('input[placeholder="Search by Client Name or Project Title"]')
+    searchClientInProjectElement.should('exist')
+    searchClientInProjectElement.type(projectName)
 
     const projectTask = cy.get('.max-w-full')
       projectTask.within(() => {
@@ -33,8 +33,7 @@ describe('Go to Projects', () => {
     deleteButton.click()
 
     const confirmationButton = cy.contains('button', "Yes, I'm sure")
-    confirmationButton.should('exist')
-    confirmationButton.click()
+    confirmationButton.should('exist').click()
   })
 
 })

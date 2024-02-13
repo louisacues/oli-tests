@@ -29,9 +29,10 @@ describe('Go to Projects Page and', () => {
     const projectNameTitleElement = cy.contains('label', 'Project Name')
     projectNameTitleElement.should('contain', 'Project Name')
 
-    const projectNameElement = cy.get('body').find('#projectName')
-    projectNameElement.should('exist')
+    const projectNameElement = cy.get('#projectName')
+    /* projectNameElement.should('exist') */
     projectNameElement.type(projectName)
+    projectNameElement.invoke('val').should('eq', projectName)
 
     const submitElement = cy.get('body').find('.justify-end > .group')
     submitElement.should('exist')
