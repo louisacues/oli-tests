@@ -19,6 +19,7 @@ describe('Go to Projects Page', () => {
 
   it('should be able to see Projects', () => {
     goToProjectPage()
+    cy.wait(200)
     const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
     projectHeaderElement.should('contain', 'Projects')
   })
@@ -37,7 +38,7 @@ describe('Go to Projects Page', () => {
      
   })
 
-  it('add client task, details and comment, and delete client tasks', () => {
+  it('add client task, details, comment, set due date, update status, and delete client tasks', () => {
     goToProjectPage()
     cy.wait(200)
     const selectProjectClient = cy.get('div.flex.flex-col.w-full')
