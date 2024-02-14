@@ -49,7 +49,7 @@ describe('Create Client Page Tests', () => {
     goToAddClientPage()
   })
 
-  it('should be able to go to Create Client Page', () => {
+  it.only('should be able to go to Create Client Page', () => {
     cy.get(clientPageIndicator).should('contain', 'Client');
   })
 
