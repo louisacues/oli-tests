@@ -3,7 +3,7 @@ import { goToHomePage } from "../../utils/helpers/goToHomePage"
 import { login } from "../../utils/helpers/login"
 import { addComment, setDueDate, setStartDate, datePicker, deleteClientTask, deletingConfirmation, comment, newNote, birFormTypeDescription, viewClientButton, addClientButton, selectClientOnDropDown, clientName, addSelectedClient, addNewNote, enterNewNote, saveNote, commentField, selectItem, getTeamAndStatus, memberName, status } from "../../utils/helpers/projectConstants"
 
-describe('Creating Special Forms',()=>{
+describe('Creating BIR Special Form',()=>{
     beforeEach(()=>{
         goToHomePage()
         login()
