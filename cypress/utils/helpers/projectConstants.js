@@ -6,6 +6,10 @@ export const birFormType = '1800'
 export const birFormTypeDescription = "1800: Donor's Tax Return - 2024"
 export const memberName = 'Jazmine Althea Isip'
 export const status = 'Done'
+export const bizDocumentHeader = 'Business Permits: Business Registration or Renewal - 2024'
+export const customFormType = '0611-A - Payment Form Covered by a Letter Notice'
+export const customBirFormHeader = '0611-A: Payment Form Covered by a Letter Notice - 2024'
+export const customBirFormType = '0611-A'
 
 export function viewClientButton(){
     cy.contains('button',"View clients").should('contain.text','View clients').click()

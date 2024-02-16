@@ -1,9 +1,9 @@
-import { goToBirFormsPage } from "../../utils/helpers/goToBirFormsPage"
+import { goToBusinessDocumentPage } from "../../utils/helpers/goToBusinessDocumentPage"
 import { goToHomePage } from "../../utils/helpers/goToHomePage"
 import { login } from "../../utils/helpers/login"
-import { addComment, setDueDate, setStartDate, datePicker, deleteClientTask, deletingConfirmation, comment, newNote, birFormTypeDescription, viewClientButton, addClientButton, selectClientOnDropDown, clientName, addSelectedClient, addNewNote, enterNewNote, saveNote, commentField, selectItem, getTeamAndStatus, memberName, status } from "../../utils/helpers/projectConstants"
+import { addClientButton, addComment, addNewNote, addSelectedClient, bizDocumentHeader, clientName, comment, commentField, datePicker, deleteClientTask, deletingConfirmation, enterNewNote, getTeamAndStatus, memberName, newNote, saveNote, selectClientOnDropDown, selectItem, setDueDate, setStartDate, status, viewClientButton } from "../../utils/helpers/projectConstants"
 
-describe('Creating BIR Special Form',()=>{
+describe('Creating Business Document Special Form',()=>{
     beforeEach(()=>{
         goToHomePage()
         login()
@@ -12,23 +12,28 @@ describe('Creating BIR Special Form',()=>{
         cy.wait(200)
         const dashboardElement = cy.get('body').find('h2.text-xl.font-semibold')
         dashboardElement.should('contain', 'Dashboard')
-      })
-    it('should be able to see BIR Form type and description',()=>{
-        goToBirFormsPage()
+    })
+    it('should be able to see business document header',()=>{
+        cy.wait(300)
+        goToBusinessDocumentPage()
         const projectHeaderElement = cy.get('h1.text-2xl.font-semibold')
-        projectHeaderElement.should('contain.text',birFormTypeDescription)
+        projectHeaderElement.should('contain.text',bizDocumentHeader)
     })
     it('view and add client',()=>{
-        goToBirFormsPage()
+        cy.wait(300)
+        goToBusinessDocumentPage()
         viewClientButton()
+        const projectHeaderElement = cy.get('h1.text-2xl.font-semibold')
+        projectHeaderElement.should('contain.text','Certificate of Incorporation - 2024')
         addClientButton()
         selectClientOnDropDown().contains(clientName).should('contain.text',clientName).click()
         addSelectedClient()
+        cy.wait(200)
     })
     it('add note, comment, start date, due date, assign member, update status, and delete form',()=>{
-        goToBirFormsPage()
+        cy.wait(300)
+        goToBusinessDocumentPage()
         viewClientButton()
-        cy.wait(3000)
         const openClient = cy.get('div.col-span-3')
         openClient.contains(clientName).should('contain.text',clientName).click()
 
@@ -39,7 +44,6 @@ describe('Creating BIR Special Form',()=>{
         addNewNote()
         enterNewNote().type(newNote)
         saveNote()
-        cy.wait(200)
         const enteredNote = cy.get('input.text-sm.flex.w-full.bg-gray-50.outline-oli-blue-1.px-1')
         enteredNote.invoke('val').should('eq',newNote)
 
@@ -51,18 +55,19 @@ describe('Creating BIR Special Form',()=>{
         commentContent.within(()=>{
         cy.get('p').should('contain.text', comment)
         })
+
         setStartDate()
         datePicker().within(()=>{
             cy.get('div.p-1').within(()=>{
-              cy.get('span:nth-child(18)').should('contain.text','14').click()
+                cy.get('span:nth-child(19)').should('contain.text','15').click()
             })
-          })
+        })
         setDueDate()
         datePicker().within(()=>{
             cy.get('div.p-1').within(()=>{
-              cy.get('span:nth-child(31)').should('contain.text','27').click()
+                cy.get('span:nth-child(31)').should('contain.text','27').click()
             })
-          })
+        })
         getTeamAndStatus().eq(0).click()
         selectItem().within(()=>{
             cy.get('li').eq(4).should('contain.text',memberName).click()
