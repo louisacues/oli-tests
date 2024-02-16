@@ -52,7 +52,7 @@ describe('Adding Custom BIR form',()=>{
         const customFormHeader = cy.get('h1.text-2xl.font-semibold')
         customFormHeader.should('contain.text',customBirFormHeader)
     })
-    it.only('add client, note, comment, start date, due date, assign member, update status, and delete form',()=>{
+    it('add client, note, comment, start date, due date, assign member, update status, and delete form',()=>{
         goToCustomBirFormsPage()
         viewClientButton()
         addClientButton()
