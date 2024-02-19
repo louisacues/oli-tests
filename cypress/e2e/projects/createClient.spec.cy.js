@@ -3,44 +3,44 @@ import { goToHomePage } from '../../utils/helpers/goToHomePage'
 import { goToAddClientPage } from '../../utils/helpers/goToAddClientPage'
 
 // PAGE INDICATOR ELEMENTS IMPORTS
-import { clientPageIndicator } from "../../utils/helpers/getPageIndicatorElements";
-import { selectedClientPageIndicator } from "../../utils/helpers/getPageIndicatorElements";
+import { clientPageIndicator } from "../../utils/helpers/getCreateClientPageIndicatorElements";
+import { selectedClientPageIndicator } from "../../utils/helpers/getCreateClientPageIndicatorElements";
 
 //BUTTON ELEMENTS IMPORTS
-import { addClientButton } from "../../utils/helpers/getButtonElements";
+import { addClientButton } from "../../utils/helpers/getCreateClientButtonElements";
 
 //ERROR MESSAGES ELEMENTS IMPORTS
-import { companyNameErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
-import { contactPersonFirstNameErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
-import { contactPersonLastNameErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
-import { contactPersonNumberErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
-import { contactPersonEmailErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
-import { clientStartDateInvalidDateErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
-import { missingClientStartDateErrorMessage } from "../../utils/helpers/getErrorMessagesElements";
+import { companyNameErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
+import { contactPersonFirstNameErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
+import { contactPersonLastNameErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
+import { contactPersonNumberErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
+import { contactPersonEmailErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
+import { clientStartDateInvalidDateErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
+import { missingClientStartDateErrorMessage } from "../../utils/helpers/getCreateClientErrorMessagesElements";
 
 //INPUT ELEMENTS IMPORTS
-import { clientType } from "../../utils/helpers/getInputElements";
-import { companyName } from "../../utils/helpers/getInputElements";
-import { zipCode } from "../../utils/helpers/getInputElements";
-import { SSSNo } from "../../utils/helpers/getInputElements";
-import { tradeName } from "../../utils/helpers/getInputElements";
-import { contactBusinessNumber } from "../../utils/helpers/getInputElements";
-import { HDMFNo } from "../../utils/helpers/getInputElements";
-import { contactBusinessEmail } from "../../utils/helpers/getInputElements";
-import { contactPersonFirstName } from "../../utils/helpers/getInputElements";
-import { contactPersonLastName } from "../../utils/helpers/getInputElements";
-import { dateOfIncorporation } from "../../utils/helpers/getInputElements";
-import { RDO } from "../../utils/helpers/getInputElements";
-import { contactPersonNumber } from "../../utils/helpers/getInputElements";
-import { certificateOfIncorporationNumber } from "../../utils/helpers/getInputElements";
-import { TIN } from "../../utils/helpers/getInputElements";
-import { contactPersonEmail } from "../../utils/helpers/getInputElements";
-import { natureOfBusiness } from "../../utils/helpers/getInputElements";
-import { incomeTaxOption } from "../../utils/helpers/getInputElements";
-import { birthdate } from "../../utils/helpers/getInputElements";
-import { principalBusinessAddress } from "../../utils/helpers/getInputElements";
-import { PHICNo } from "../../utils/helpers/getInputElements";
-import { startDate } from "../../utils/helpers/getInputElements";
+import { clientType } from "../../utils/helpers/getCreateClientInputElements";
+import { companyName } from "../../utils/helpers/getCreateClientInputElements";
+import { zipCode } from "../../utils/helpers/getCreateClientInputElements";
+import { SSSNo } from "../../utils/helpers/getCreateClientInputElements";
+import { tradeName } from "../../utils/helpers/getCreateClientInputElements";
+import { contactBusinessNumber } from "../../utils/helpers/getCreateClientInputElements";
+import { HDMFNo } from "../../utils/helpers/getCreateClientInputElements";
+import { contactBusinessEmail } from "../../utils/helpers/getCreateClientInputElements";
+import { contactPersonFirstName } from "../../utils/helpers/getCreateClientInputElements";
+import { contactPersonLastName } from "../../utils/helpers/getCreateClientInputElements";
+import { dateOfIncorporation } from "../../utils/helpers/getCreateClientInputElements";
+import { RDO } from "../../utils/helpers/getCreateClientInputElements";
+import { contactPersonNumber } from "../../utils/helpers/getCreateClientInputElements";
+import { certificateOfIncorporationNumber } from "../../utils/helpers/getCreateClientInputElements";
+import { TIN } from "../../utils/helpers/getCreateClientInputElements";
+import { contactPersonEmail } from "../../utils/helpers/getCreateClientInputElements";
+import { natureOfBusiness } from "../../utils/helpers/getCreateClientInputElements";
+import { incomeTaxOption } from "../../utils/helpers/getCreateClientInputElements";
+import { birthdate } from "../../utils/helpers/getCreateClientInputElements";
+import { principalBusinessAddress } from "../../utils/helpers/getCreateClientInputElements";
+import { PHICNo } from "../../utils/helpers/getCreateClientInputElements";
+import { startDate } from "../../utils/helpers/getCreateClientInputElements";
 
 describe('Create Client Page Tests', () => {
   beforeEach( () =>{

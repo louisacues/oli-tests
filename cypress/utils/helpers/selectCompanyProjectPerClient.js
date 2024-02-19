@@ -1,4 +1,4 @@
-export function selectCompanyOnProjectPerClient(){
+export function selectCompanyOnProjectPerClient(company){
     const projectsPerClientHrefElement = cy.get('[class="truncate"]').contains(/Projects per client/i)
     projectsPerClientHrefElement.should("exist")
     projectsPerClientHrefElement.click()
@@ -15,7 +15,7 @@ export function selectCompanyOnProjectPerClient(){
     searchInputElement.type("padua corp llc")
     searchInputElement.should("have.value", "padua corp llc")
 
-    const selectCompanyHrefElement = cy.get('[class="font-semibold text-xs text-oli-blue-6"]').contains(/padua corp llc/i)
+    const selectCompanyHrefElement = cy.get('[class="font-semibold text-xs text-oli-blue-6"]').contains(company)
     selectCompanyHrefElement.should("exist")
     selectCompanyHrefElement.click()
     selectCompanyHrefElement.should("not.exist")
