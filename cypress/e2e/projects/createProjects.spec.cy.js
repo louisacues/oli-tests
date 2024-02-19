@@ -30,7 +30,7 @@ describe('Go to Projects Page and', () => {
     projectNameTitleElement.should('contain', 'Project Name')
 
     const currentDate = new Date()
-    const timestamp = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}_${currentDate.getHours().toString().padStart(2, '0')}${currentDate.getMinutes().toString().padStart(2, '0')}${currentDate.getSeconds().toString().padStart(2, '0')}`
+    const timestamp = `${currentDate.getFullYear()}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getDate().toString().padStart(2, '0')}_${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}.${currentDate.getSeconds().toString().padStart(2, '0')}`
     const uniqueProjectName = `${projectName}_${timestamp}`
 
     const projectNameElement = cy.get('#projectName')
