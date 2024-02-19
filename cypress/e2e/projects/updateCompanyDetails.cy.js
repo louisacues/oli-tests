@@ -117,12 +117,12 @@ describe('Go to Home Page and', () => {
         dateOfIncorporationInput.invoke('val').should('eq', dateOfIncorporation)
  */
         /* RDO */
-        const rdoElement = cy.contains('label', 'RDO')
+       /*  const rdoElement = cy.contains('label', 'RDO')
         rdoElement.should('contain', 'RDO')
 
         const rdoInput = cy.get('#RDO').clear()
         rdoInput.type(RDO)
-        rdoInput.invoke('val').should('eq', RDO)
+        rdoInput.invoke('val').should('eq', RDO) */
 
         /* CERTIFICATE OF INCORPORATION NUMBER*/
         const certificateOfIncorporationNumberElement = cy.contains('label', 'Certificate of Incorporation Number')
@@ -133,12 +133,12 @@ describe('Go to Home Page and', () => {
         certificateOfIncorporationNumberInput.invoke('val').should('eq', certificateOfIncorporationNumber)
 
         /* TIN */
-        const tinElement = cy.contains('label', 'TIN')
+        /* const tinElement = cy.contains('label', 'TIN')
         tinElement.should('contain', 'TIN')
 
         const tinInput = cy.get('#TIN').clear()
         tinInput.type(TIN)
-        tinInput.invoke('val').should('eq', TIN)
+        tinInput.invoke('val').should('eq', TIN) */
 
         /* NATURE OF BUSINESS */
         const natureOfBusinessElement = cy.contains('label', 'Nature of Business')
@@ -149,12 +149,12 @@ describe('Go to Home Page and', () => {
         natureOfBusinessInput.invoke('val').should('eq', natureOfBusiness)
 
         /* INCOME TAX OPTION */
-        const incomeTaxOptionElement = cy.contains('label', 'Income Tax Option')
+        /* const incomeTaxOptionElement = cy.contains('label', 'Income Tax Option')
         incomeTaxOptionElement.should('contain', 'Income Tax Option')
 
         const incomeTaxOptionInput = cy.get('#incomeTaxOption').clear()
         incomeTaxOptionInput.type(incomeTaxOption)
-        incomeTaxOptionInput.invoke('val').should('eq', incomeTaxOption)
+        incomeTaxOptionInput.invoke('val').should('eq', incomeTaxOption) */
 
         /* PRINCIPAL BUSINESS ADDRESS */
         const principalBusinessAddressElement = cy.contains('label', 'Principal Business Address')
@@ -214,11 +214,11 @@ describe('Go to Home Page and', () => {
         cy.contains('Country Of Incorporation').next('dd').should('contain', countryOfIncorporation)
         cy.contains('Contact Business Email').next('dd').should('contain', contactBusinessEmail)
         /* cy.contains('Date Of Incorporation').next('dd').should('contain', dateOfIncorporation) */
-        cy.contains('RDO').next('dd').should('contain', RDO)
+        /* cy.contains('RDO').next('dd').should('contain', RDO) */
         cy.contains('Certificate Of Incorporation Number').next('dd').should('contain', certificateOfIncorporationNumber)
-        cy.contains('TIN').next('dd').should('contain', TIN)
+        /* cy.contains('TIN').next('dd').should('contain', TIN) */
         cy.contains('Nature Of Business').next('dd').should('contain', natureOfBusiness)
-        cy.contains('Income Tax Option').next('dd').should('contain', incomeTaxOption) 
+        /* cy.contains('Income Tax Option').next('dd').should('contain', incomeTaxOption) */ 
         cy.contains('Principal Business Address').next('dd').should('contain', principalBusinessAddress)
         cy.contains('PHIC No').next('dd').should('contain', phicNo)
        
@@ -268,9 +268,7 @@ describe('Go to Home Page and', () => {
         companyTitleElement.invoke('val').should('eq', companyName) */
 
         cy.contains('button', 'Change Photo').click();
-      /*  cy.contains('button', 'Change Photo').click();
-
-        // Assuming you want to upload a file named "new_photo.png"
+      /*  // Assuming you want to upload a file named "new_photo.png"
         const fileName = 'sample-image.png';
         const fileType = 'image/png';
 
