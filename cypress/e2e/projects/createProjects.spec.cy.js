@@ -29,10 +29,14 @@ describe('Go to Projects Page and', () => {
     const projectNameTitleElement = cy.contains('label', 'Project Name')
     projectNameTitleElement.should('contain', 'Project Name')
 
+    const currentDate = new Date()
+    const timestamp = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}_${currentDate.getHours().toString().padStart(2, '0')}${currentDate.getMinutes().toString().padStart(2, '0')}${currentDate.getSeconds().toString().padStart(2, '0')}`
+    const uniqueProjectName = `${projectName}_${timestamp}`
+
     const projectNameElement = cy.get('#projectName')
     /* projectNameElement.should('exist') */
-    projectNameElement.type(projectName)
-    projectNameElement.invoke('val').should('eq', projectName)
+    projectNameElement.type(uniqueProjectName)
+    projectNameElement.invoke('val').should('eq', uniqueProjectName)
 
     const submitElement = cy.get('body').find('.justify-end > .group')
     submitElement.should('exist')
