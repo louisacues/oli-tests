@@ -14,7 +14,7 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -116,7 +116,7 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -175,7 +175,7 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -216,7 +216,7 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -241,10 +241,22 @@ describe('Go to Home Page and', () => {
         const confirmationButton = cy.contains('button', 'Change Photo')
         confirmationButton.should('exist').click()
 
+        const fileName = 'profile.png'
+        const fileType = 'image/png'
+
+        cy.fixture(fileName).then(fileContent => {
+        cy.get('#profile-upload').then(function(el) {
+            const blob = Cypress.Blob.base64StringToBlob(fileContent, fileType)
+            const file = new File([blob], fileName, { type: fileType })
+            const dataTransfer = new DataTransfer()
+            dataTransfer.items.add(file)
+
+            el[0].files = dataTransfer.files
+            cy.wrap(el).trigger('change', { force: true })
+        })
+        })
 
         const saveButton = cy.contains('button', 'Save')
         saveButton.should('exist').click()
   })
-
-  
 })

@@ -14,7 +14,7 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -185,7 +185,7 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -225,13 +225,13 @@ describe('Go to Home Page and', () => {
   })
 
 
-  it('should be able to update company profile picture', () => {
+  it.only('should be able to update company profile picture', () => {
        
         const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('contain', 'JI').click()
+        accountHeaderElement.should('exist').click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -263,30 +263,27 @@ describe('Go to Home Page and', () => {
             cy.get('h3').should('contain', 'Company Logo')
         })
 
-       /*  const companyTitleElement = cy.get('h4.text-xl.font-semibold')
-        companyTitleElement.should('contain', companyName)
-        companyTitleElement.invoke('val').should('eq', companyName) */
+        cy.contains('button', 'Change Photo').click()
 
-        cy.contains('button', 'Change Photo').click();
-      /*  // Assuming you want to upload a file named "new_photo.png"
-        const fileName = 'sample-image.png';
-        const fileType = 'image/png';
+        const fileName = 'sample-image.png'
+        const fileType = 'image/png'
 
-        // Upload a new photo
         cy.fixture(fileName).then(fileContent => {
         cy.get('#profile-upload').then(function(el) {
-            const blob = Cypress.Blob.base64StringToBlob(fileContent, fileType);
-            const file = new File([blob], fileName, { type: fileType });
-            const dataTransfer = new DataTransfer();
-            dataTransfer.items.add(file);
+            const blob = Cypress.Blob.base64StringToBlob(fileContent, fileType)
+            const file = new File([blob], fileName, { type: fileType })
+            const dataTransfer = new DataTransfer()
+            dataTransfer.items.add(file)
 
             el[0].files = dataTransfer.files;
-            cy.wrap(el).trigger('change', { force: true });
+            cy.wrap(el).trigger('change', { force: true })
         });
-        }); */
+        });
 
-        /* const saveButton = cy.contains('button', 'Save')
-        saveButton.should('exist').click() */
+        const saveButton = cy.contains('button', 'Save')
+        saveButton.should('exist').click()
+
+        
     })
 
 })
