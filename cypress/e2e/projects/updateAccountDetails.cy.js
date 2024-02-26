@@ -1,6 +1,6 @@
 import { login } from '../../utils/helpers/login'
 import { goToHomePage } from '../../utils/helpers/goToHomePage'
-import { accountFirstName, accountLastName, accountEmail, accountBirthDate, accountContactNumber, accountPosition, accountTIN, accountHDMFNo, accountSSSNo, accountPHICNo, emergencyContactEmail, emergencyContactFirstName, emergencyContactLastName, emergencyContactNumber} from './updateAccountConstants'
+import { accountFirstName, accountLastName, accountEmail, accountBirthDate, accountContactNumber, accountPosition, accountTIN, accountHDMFNo, accountSSSNo, accountPHICNo, emergencyContactEmail, emergencyContactFirstName, emergencyContactLastName, emergencyContactNumber, fileName, fileType} from './updateAccountConstants'
 
 describe('Go to Home Page and', () => {
     beforeEach(() => {
@@ -241,8 +241,6 @@ describe('Go to Home Page and', () => {
         const confirmationButton = cy.contains('button', 'Change Photo')
         confirmationButton.should('exist').click()
 
-        const fileName = 'profile.png'
-        const fileType = 'image/png'
 
         cy.fixture(fileName).then(fileContent => {
         cy.get('#profile-upload').then(function(el) {
@@ -258,5 +256,6 @@ describe('Go to Home Page and', () => {
 
         const saveButton = cy.contains('button', 'Save')
         saveButton.should('exist').click()
+
   })
 })

@@ -13,3 +13,6 @@ export const emergencyContactFirstName = 'Thea'
 export const emergencyContactLastName = 'Isip'
 export const emergencyContactEmail = 'sample@gmail.com'
 export const emergencyContactNumber = '09090900909'
+
+export const fileName = 'profile.png'
+export const fileType = 'image/png'
