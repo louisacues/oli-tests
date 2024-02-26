@@ -24,13 +24,13 @@ describe('Creating BIR Forms under Projects per Client tests', () => {
         selectCompanyOnProjectPerClient(/padua corp llc/i)
       })
       it('should view the BIR Forms of the Client', () => {
-        cy.get(birFormsViewAllButton).eq(0).should("exist");
-        cy.get(birFormsViewAllButton).eq(0).click();
+        cy.get(birFormsViewAllButton).eq(1).should("exist");
+        cy.get(birFormsViewAllButton).eq(1).click();
         cy.get(birformsPageIndicator).should('contain', birformsPageIndicatorContent)
       });
       it.only('should create 0605RF: Business Renewal Form', () => {
-        cy.get(birFormsViewAllButton).eq(0).should("exist");
-        cy.get(birFormsViewAllButton).eq(0).click();
+        cy.get(birFormsViewAllButton).eq(1).should("exist");
+        cy.get(birFormsViewAllButton).eq(1).click();
 
         cy.get(birformsPageIndicator).should("exist")
 
@@ -61,8 +61,8 @@ describe('Creating BIR Forms under Projects per Client tests', () => {
         cy.contains(businessRenewalFormIndicator).should('exist')
       });
       it.only('should check that 0605RF: Business Renewal Form is not avaiable to be created again', () => {
-        cy.get(birFormsViewAllButton).eq(0).should("exist");
-        cy.get(birFormsViewAllButton).eq(0).click();
+        cy.get(birFormsViewAllButton).eq(1).should("exist");
+        cy.get(birFormsViewAllButton).eq(1).click();
 
         cy.get(birformsPageIndicator).should("exist")
 
@@ -74,8 +74,8 @@ describe('Creating BIR Forms under Projects per Client tests', () => {
         cy.get(businessRenewalFormSelection).should('not.exist');
       });
       it.only('should delete 0605RF: Business Renewal Form', () => {
-        cy.get(birFormsViewAllButton).eq(0).should("exist");
-        cy.get(birFormsViewAllButton).eq(0).click();
+        cy.get(birFormsViewAllButton).eq(1).should("exist");
+        cy.get(birFormsViewAllButton).eq(1).click();
 
         cy.get(birformsPageIndicator).should("exist")
 

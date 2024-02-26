@@ -24,13 +24,13 @@ describe('Creating PHIC Form under Projects per Client tests', () => {
         selectCompanyOnProjectPerClient(/padua corp llc/i)
       })
       it('should view the PHIC Forms of the Client', () => {
-        cy.get(phicFormsViewAllButton).eq(3).should("exist");
-        cy.get(phicFormsViewAllButton).eq(3).click();
+        cy.get(phicFormsViewAllButton).eq(4).should("exist");
+        cy.get(phicFormsViewAllButton).eq(4).click();
         cy.get(phicFormsPageIndicator).should('contain', phicFormsPageIndicatorContent)
       });
       it('should create PHIC - December - 2024 Form', () => {
-        cy.get(phicFormsViewAllButton).eq(3).should("exist");
-        cy.get(phicFormsViewAllButton).eq(3).click();
+        cy.get(phicFormsViewAllButton).eq(4).should("exist");
+        cy.get(phicFormsViewAllButton).eq(4).click();
         cy.get(phicFormsPageIndicator).should('contain', phicFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -60,8 +60,8 @@ describe('Creating PHIC Form under Projects per Client tests', () => {
         cy.contains(phicDecemberFormIndicator).should('exist')
       });
       it('should check that PHIC - December - 2024 Form is not avaiable to be created again', () => {
-        cy.get(phicFormsViewAllButton).eq(3).should("exist");
-        cy.get(phicFormsViewAllButton).eq(3).click();
+        cy.get(phicFormsViewAllButton).eq(4).should("exist");
+        cy.get(phicFormsViewAllButton).eq(4).click();
         cy.get(phicFormsPageIndicator).should('contain', phicFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -72,8 +72,8 @@ describe('Creating PHIC Form under Projects per Client tests', () => {
         cy.get('input[name="PHIC - December"]').should('not.exist');
       });
       it('should delete PHIC - December - 2024 Form', () => {
-        cy.get(phicFormsViewAllButton).eq(3).should("exist");
-        cy.get(phicFormsViewAllButton).eq(3).click();
+        cy.get(phicFormsViewAllButton).eq(4).should("exist");
+        cy.get(phicFormsViewAllButton).eq(4).click();
         cy.get(phicFormsPageIndicator).should('contain', phicFormsPageIndicatorContent)
 
         cy.contains(phicDecemberFormIndicator).should('exist')

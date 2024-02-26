@@ -24,13 +24,13 @@ describe('Creating SSS Form under Projects per Client tests', () => {
         selectCompanyOnProjectPerClient(/padua corp llc/i)
       })
       it('should view the SSS Forms of the Client', () => {
-        cy.get(sssFormsViewAllButton).eq(1).should("exist");
-        cy.get(sssFormsViewAllButton).eq(1).click();
+        cy.get(sssFormsViewAllButton).eq(2).should("exist");
+        cy.get(sssFormsViewAllButton).eq(2).click();
         cy.get(sssFormsPageIndicator).should('contain', sssFormsPageIndicatorContent)
       });
       it('should create SSS - December - 2024 Form', () => {
-        cy.get(sssFormsViewAllButton).eq(1).should("exist");
-        cy.get(sssFormsViewAllButton).eq(1).click();
+        cy.get(sssFormsViewAllButton).eq(2).should("exist");
+        cy.get(sssFormsViewAllButton).eq(2).click();
         cy.get(sssFormsPageIndicator).should('contain', sssFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -60,8 +60,8 @@ describe('Creating SSS Form under Projects per Client tests', () => {
         cy.contains(sssDecemberFormIndicator).should('exist')
       });
       it('should check that SSS - December - 2024 Form is not avaiable to be created again', () => {
-        cy.get(sssFormsViewAllButton).eq(1).should("exist");
-        cy.get(sssFormsViewAllButton).eq(1).click();
+        cy.get(sssFormsViewAllButton).eq(2).should("exist");
+        cy.get(sssFormsViewAllButton).eq(2).click();
         cy.get(sssFormsPageIndicator).should('contain', sssFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -72,8 +72,8 @@ describe('Creating SSS Form under Projects per Client tests', () => {
         cy.get('input[name="sss - December"]').should('not.exist');
       });
       it('should delete SSS - December - 2024 Form', () => {
-        cy.get(sssFormsViewAllButton).eq(1).should("exist");
-        cy.get(sssFormsViewAllButton).eq(1).click();
+        cy.get(sssFormsViewAllButton).eq(2).should("exist");
+        cy.get(sssFormsViewAllButton).eq(2).click();
         cy.get(sssFormsPageIndicator).should('contain', sssFormsPageIndicatorContent)
 
         cy.contains(sssDecemberFormIndicator).should('exist')

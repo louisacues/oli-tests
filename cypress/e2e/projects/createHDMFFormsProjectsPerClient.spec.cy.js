@@ -24,13 +24,13 @@ describe('Creating HDMF Form under Projects per Client tests', () => {
         selectCompanyOnProjectPerClient(/padua corp llc/i)
       })
       it('should view the HDMF Forms of the Client', () => {
-        cy.get(hdmfFormsViewAllButton).eq(2).should("exist");
-        cy.get(hdmfFormsViewAllButton).eq(2).click();
+        cy.get(hdmfFormsViewAllButton).eq(3).should("exist");
+        cy.get(hdmfFormsViewAllButton).eq(3).click();
         cy.get(hdmfFormsPageIndicator).should('contain', hdmfFormsPageIndicatorContent)
       });
       it('should create HDMF - December - 2024 Form', () => {
-        cy.get(hdmfFormsViewAllButton).eq(2).should("exist");
-        cy.get(hdmfFormsViewAllButton).eq(2).click();
+        cy.get(hdmfFormsViewAllButton).eq(3).should("exist");
+        cy.get(hdmfFormsViewAllButton).eq(3).click();
         cy.get(hdmfFormsPageIndicator).should('contain', hdmfFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -60,8 +60,8 @@ describe('Creating HDMF Form under Projects per Client tests', () => {
         cy.contains(hdmfDecemberFormIndicator).should('exist')
       });
       it('should check that HDMF - December - 2024 Form is not avaiable to be created again', () => {
-        cy.get(hdmfFormsViewAllButton).eq(2).should("exist");
-        cy.get(hdmfFormsViewAllButton).eq(2).click();
+        cy.get(hdmfFormsViewAllButton).eq(3).should("exist");
+        cy.get(hdmfFormsViewAllButton).eq(3).click();
         cy.get(hdmfFormsPageIndicator).should('contain', hdmfFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -72,8 +72,8 @@ describe('Creating HDMF Form under Projects per Client tests', () => {
         cy.get(hdmfDecemberFormSelection).should('not.exist');
       });
       it('should delete HDMF - December - 2024 Form', () => {
-        cy.get(hdmfFormsViewAllButton).eq(2).should("exist");
-        cy.get(hdmfFormsViewAllButton).eq(2).click();
+        cy.get(hdmfFormsViewAllButton).eq(3).should("exist");
+        cy.get(hdmfFormsViewAllButton).eq(3).click();
         cy.get(hdmfFormsPageIndicator).should('contain', hdmfFormsPageIndicatorContent)
 
         cy.contains(hdmfDecemberFormIndicator).should('exist')

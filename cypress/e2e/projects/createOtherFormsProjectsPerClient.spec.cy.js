@@ -24,14 +24,14 @@ describe('Creating Other Form under Projects per Client tests', () => {
         selectCompanyOnProjectPerClient(/padua corp llc/i)
       })
       it('should view the Other Form of the Client', () => {
-        cy.get(otherFormsViewAllButton).eq(4).should("exist");
-        cy.get(otherFormsViewAllButton).eq(4).click();
+        cy.get(otherFormsViewAllButton).eq(5).should("exist");
+        cy.get(otherFormsViewAllButton).eq(5).click();
         cy.get(otherFormsPageIndicator).should('contain', otherFormsPageIndicatorContent)
       });
       it('should create Certificate of Incorporation - 2024 Form', () => {
         
-        cy.get(otherFormsViewAllButton).eq(4).should("exist");
-        cy.get(otherFormsViewAllButton).eq(4).click();
+        cy.get(otherFormsViewAllButton).eq(5).should("exist");
+        cy.get(otherFormsViewAllButton).eq(5).click();
         cy.get(otherFormsPageIndicator).should('contain', otherFormsPageIndicatorContent)
 
         cy.get(addFormCloseButton).should('not.exist')
@@ -61,8 +61,8 @@ describe('Creating Other Form under Projects per Client tests', () => {
         cy.contains(certificateOfIncorporationFormIndicator).should('exist')
       });
       it('should check that Certificate of Incorporation - 2024 Form is not avaiable to be created again', () => {
-        cy.get(otherFormsViewAllButton).eq(4).should("exist");
-        cy.get(otherFormsViewAllButton).eq(4).click();
+        cy.get(otherFormsViewAllButton).eq(5).should("exist");
+        cy.get(otherFormsViewAllButton).eq(5).click();
 
         cy.get(otherFormsPageIndicator).should("exist")
 
@@ -74,8 +74,8 @@ describe('Creating Other Form under Projects per Client tests', () => {
         cy.get(certificateOfIncorporationFormSelection).should('not.exist');
       });
       it('should delete Certificate of Incorporation - 2024 Form', () => {
-        cy.get(otherFormsViewAllButton).eq(4).should("exist");
-        cy.get(otherFormsViewAllButton).eq(4).click();
+        cy.get(otherFormsViewAllButton).eq(5).should("exist");
+        cy.get(otherFormsViewAllButton).eq(5).click();
 
         cy.get(otherFormsPageIndicator).should("exist")
 
