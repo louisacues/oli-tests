@@ -1,0 +1,1 @@
+export const addClientButton = /add client/i;
