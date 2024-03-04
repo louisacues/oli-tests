@@ -60,7 +60,7 @@ describe('Create SSS Special Form', () => {
         addSelectedClientButton.should('be.visible')
         addSelectedClientButton.click()
 
-        const sssFormsTable = cy.get('div.block.pb-20.xl\\:pb-0.font-raleway.text-\\[0\\.625rem\\].bg-white')
+        const sssFormsTable = cy.get('div.block.w-full')
         sssFormsTable.should('exist')
         sssFormsTable.within(() => {
             cy.contains(clientName).should('be.visible').click()

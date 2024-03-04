@@ -60,7 +60,7 @@ describe('Create a PHIC Special Form',() => {
         addSelectedClientButton.should('be.visible')
         addSelectedClientButton.click()
 
-        const phicFormsTable = cy.get('div.block.pb-20.xl\\:pb-0.font-raleway.text-\\[0\\.625rem\\].bg-white')
+        const phicFormsTable = cy.get('div.block.w-full')
         phicFormsTable.should('exist')
         phicFormsTable.within(() => {
             cy.contains(clientName).should('be.visible').click()
