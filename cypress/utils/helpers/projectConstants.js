@@ -1,4 +1,5 @@
 export const clientName = 'Anthony Corp'
+export const projectTitle = 'Test Anthony Project'
 export const linkToClientTask = 'Client Task'
 export const comment = 'A sample Comment'
 export const newNote = 'Sample note'

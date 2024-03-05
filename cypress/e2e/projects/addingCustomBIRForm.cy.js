@@ -84,13 +84,13 @@ describe('Adding Custom BIR form',()=>{
         setStartDate()
         datePicker().within(()=>{
             cy.get('div.p-1').within(()=>{
-              cy.get('span:nth-child(18)').should('contain.text','14').click()
+              cy.get('span:nth-child(18)').should('contain.text','13').click()
             })
           })
         setDueDate()
         datePicker().within(()=>{
             cy.get('div.p-1').within(()=>{
-              cy.get('span:nth-child(31)').should('contain.text','27').click()
+              cy.get('span:nth-child(31)').should('contain.text','26').click()
             })
           })
         cy.wait(300)

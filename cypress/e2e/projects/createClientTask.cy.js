@@ -2,7 +2,7 @@ import { login } from '../../utils/helpers/login'
 import { goToHomePage } from '../../utils/helpers/goToHomePage'
 import { goToProjectPage } from '../../utils/helpers/goToProjectPage'
 import { clientTaskTitle, comment, taskDescription } from '../../utils/helpers/clientTaskInputConstants'
-import { clientName, linkToClientTask } from '../../utils/helpers/projectConstants'
+import { clientName, linkToClientTask, projectTitle } from '../../utils/helpers/projectConstants'
 import { addComment, addTask, addTaskButton, checkButton, deleteClientTask, deletingConfirmation, setDueDate, statusButton } from '../../utils/helpers/clientTaskButtonsConstants'
 
 describe('Go to Projects Page', () => {
@@ -27,8 +27,7 @@ describe('Go to Projects Page', () => {
     goToProjectPage()
     cy.wait(200)
     const selectProjectClient = cy.get('div.flex.flex-col.w-full')
-    selectProjectClient.contains(clientName).should('exist').click()
-    
+    selectProjectClient.contains(projectTitle).should('exist').click()
     cy.get('h2.text-xl.font-semibold').should('contain', clientName)
     
     const projectLinkToClientTask = cy.get('.flex.bg-white.shadow-bottom-blue')
@@ -42,7 +41,7 @@ describe('Go to Projects Page', () => {
     goToProjectPage()
     cy.wait(200)
     const selectProjectClient = cy.get('div.flex.flex-col.w-full')
-    selectProjectClient.contains(clientName).should('contain.text', clientName).click()
+    selectProjectClient.contains(projectTitle).should('contain.text', projectTitle).click()
         
     const projectLinkToClientTask = cy.get('.flex.bg-white.shadow-bottom-blue')
     projectLinkToClientTask.within(() =>{
@@ -83,7 +82,7 @@ describe('Go to Projects Page', () => {
     const datePicker = cy.get('div.date-picker-container')
     datePicker.within(()=>{
       cy.get('div.p-1').within(()=>{
-        cy.get('span:nth-child(31)').should('contain.text','27').click()
+        cy.get('span:nth-child(31)').should('contain.text','26').click()
       })
     })
     statusButton()
