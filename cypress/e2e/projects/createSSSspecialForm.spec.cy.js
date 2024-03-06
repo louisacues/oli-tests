@@ -17,6 +17,7 @@ describe('Create SSS Special Form', () => {
     })
 
     it('should be able to view clients in the month of august', () => {
+        cy.url().should('include', 'form')
         const sssHeading = cy.contains(sssHeadingText)
         sssHeading.should('exist')
 
@@ -30,6 +31,7 @@ describe('Create SSS Special Form', () => {
     })
 
     it('should be able to create SSS form for a client in the month of august', () => {
+        cy.url().should('include', 'form')
         const sssHeading = cy.contains(sssHeadingText)
         sssHeading.should('exist')
 
@@ -37,7 +39,7 @@ describe('Create SSS Special Form', () => {
         sssTableDiv.within(() => {
             cy.get('button:contains("View clients")').eq(4).click()
         })
-
+        cy.url().should('include', 'tasks')
         const sssAugustHeading = cy.contains(sssAugustHeadingText)
         sssAugustHeading.should('exist')
 
@@ -113,12 +115,12 @@ describe('Create SSS Special Form', () => {
 
         const startDate = cy.get('button.w-full.flex.pl-3.pr-10.py-2.text-sm').eq(0)
         startDate.within(() => {
-            cy.get('span').should('have.text', '08-Feb-2024')
+            cy.get('span').should('have.text', '07-Mar-2024')
         })
 
         const dueDate = cy.get('button.w-full.flex.pl-3.pr-10.py-2.text-sm').eq(1)
         dueDate.within(() => {
-            cy.get('span').should('have.text', '11-Feb-2024')
+            cy.get('span').should('have.text', '10-Mar-2024')
         })
 
         const projectDeleteButton = cy.get('div.w-full.col-span-full')
