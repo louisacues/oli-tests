@@ -3,7 +3,7 @@ import { goToHomePage } from '../../utils/helpers/goToHomePage'
 
 describe('Oli Firm Login', () => {
   beforeEach(goToHomePage)
-  it('login to firm and goToHompage', () => {
+  it('login to firm and goToHomepage', () => {
     login()
   })
 

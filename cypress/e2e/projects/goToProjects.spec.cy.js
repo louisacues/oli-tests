@@ -3,7 +3,7 @@ import { goToHomePage } from '../../utils/helpers/goToHomePage'
 
 describe('Go to Projects Page', () => {
   beforeEach(goToHomePage)
-  it('login to firm and goToHompage', () => {
+  it('login to firm and goToHomepage', () => {
     login()
   })
 
