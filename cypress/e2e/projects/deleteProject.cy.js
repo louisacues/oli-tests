@@ -14,6 +14,8 @@ describe('Go to Projects', () => {
     
     const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
     projectHeaderElement.should('contain', 'Projects')
+    
+    cy.url().should('include','projects')
 
     const searchClientInProjectElement = cy.get('body').find('input[placeholder="Search by Client Name or Project Title"]')
     searchClientInProjectElement.should('exist')

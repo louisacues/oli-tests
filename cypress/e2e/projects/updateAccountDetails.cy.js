@@ -23,9 +23,13 @@ describe('Go to Home Page and', () => {
        
         const settingsHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         settingsHeaderElement.should('contain', 'Settings')
-        
+
+        cy.url().should('include','settings')
+
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
+
+        cy.url().should('include','account')
 
         const accountDetailsTitle = cy.get(':nth-child(1) > .bg-white > form > .grid > :nth-child(2)')
         accountDetailsTitle.should('contain', 'Personal Details')
@@ -44,7 +48,8 @@ describe('Go to Home Page and', () => {
         const lastNameElement = cy.contains('label', 'Last Name')
         lastNameElement.should('contain', 'Last Name')
 
-        const lastNameInput = cy.get('#lastName').clear()
+        const lastNameInput = cy.get('#lastName')
+        lastNameInput.clear()
         lastNameInput.type(accountLastName)
         lastNameInput.invoke('val').should('eq', accountLastName)
 
@@ -52,7 +57,8 @@ describe('Go to Home Page and', () => {
         const birthDateElement = cy.contains('label', 'Birthdate')
         birthDateElement.should('contain', 'Birthdate')
 
-        const birthDateInput = cy.get('#birthDate').clear()
+        const birthDateInput = cy.get('#birthDate')
+        birthDateInput.clear()
         birthDateInput.type(accountBirthDate)
         birthDateInput.invoke('val').should('eq', accountBirthDate)
 
@@ -60,7 +66,8 @@ describe('Go to Home Page and', () => {
         const contactNumberElement = cy.contains('label', 'Contact Number')
         contactNumberElement.should('contain', 'Contact Number')
 
-        const contactNumberInput = cy.get('#contactNumber').clear()
+        const contactNumberInput = cy.get('#contactNumber')
+        contactNumberInput.clear()
         contactNumberInput.type(accountContactNumber)
         contactNumberInput.invoke('val').should('eq', accountContactNumber)
 
@@ -68,7 +75,8 @@ describe('Go to Home Page and', () => {
         const positionElement = cy.contains('label', 'Position')
         positionElement.should('contain', 'Position')
 
-        const positionInput = cy.get('#position').clear()
+        const positionInput = cy.get('#position')
+        positionInput.clear()
         positionInput.type(accountPosition)
         positionInput.invoke('val').should('eq', accountPosition)
 
@@ -76,7 +84,8 @@ describe('Go to Home Page and', () => {
         const tinElement = cy.contains('label', 'TIN')
         tinElement.should('contain', 'TIN')
 
-        const tinInput = cy.get('#TIN').clear()
+        const tinInput = cy.get('#TIN')
+        tinInput.clear()
         tinInput.type(accountTIN)
         tinInput.invoke('val').should('eq', accountTIN)
 
@@ -84,7 +93,8 @@ describe('Go to Home Page and', () => {
         const sssElement = cy.contains('label', 'SSS')
         sssElement.should('contain', 'SSS')
 
-        const sssInput = cy.get('#SSSNo').clear()
+        const sssInput = cy.get('#SSSNo')
+        sssInput.clear()
         sssInput.type(accountSSSNo)
         sssInput.invoke('val').should('eq', accountSSSNo)
 
@@ -92,7 +102,8 @@ describe('Go to Home Page and', () => {
         const hdmfNumberElement = cy.contains('label', 'Pag-ibig')
         hdmfNumberElement.should('contain', 'Pag-ibig')
 
-        const hdmfNumberInput = cy.get('#HDMFNo').clear()
+        const hdmfNumberInput = cy.get('#HDMFNo')
+        hdmfNumberInput.clear()
         hdmfNumberInput.type(accountHDMFNo)
         hdmfNumberInput.invoke('val').should('eq', accountHDMFNo)
 
@@ -100,7 +111,8 @@ describe('Go to Home Page and', () => {
         const phicNoElement = cy.contains('label', 'PHIC')
         phicNoElement.should('contain', 'PHIC')
 
-        const phicNoInput = cy.get('#PHICNo').clear()
+        const phicNoInput = cy.get('#PHICNo')
+        phicNoInput.clear()
         phicNoInput.type(accountPHICNo)
         phicNoInput.invoke('val').should('eq', accountPHICNo)
         
@@ -126,6 +138,8 @@ describe('Go to Home Page and', () => {
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
 
+        cy.url().should('include','account')
+
         const emergencyContactTitle = cy.get('h1.col-span-2')
         emergencyContactTitle.should('contain', 'Emergency Contact')
 
@@ -145,7 +159,8 @@ describe('Go to Home Page and', () => {
         const emergencyContactLastNameElement = cy.contains('label', 'Last Name')
         emergencyContactLastNameElement.should('contain', 'Last Name')
 
-        const emergencyContactLastNameInput = cy.get('#emergencyContactLastName').clear()
+        const emergencyContactLastNameInput = cy.get('#emergencyContactLastName')
+        emergencyContactLastNameInput.clear()
         emergencyContactLastNameInput.type(emergencyContactLastName)
         emergencyContactLastNameInput.invoke('val').should('eq', emergencyContactLastName)
 
@@ -153,7 +168,8 @@ describe('Go to Home Page and', () => {
         const emailElement = cy.contains('label', 'Email')
         emailElement.should('contain', 'Email')
 
-        const emailInput = cy.get('#emergencyContactEmail').clear()
+        const emailInput = cy.get('#emergencyContactEmail')
+        emailInput.clear()
         emailInput.type(emergencyContactEmail)
         emailInput.invoke('val').should('eq', emergencyContactEmail)
 
@@ -161,7 +177,8 @@ describe('Go to Home Page and', () => {
         const contactNumberElement = cy.contains('label', 'Contact Number')
         contactNumberElement.should('contain', 'Contact Number')
 
-        const contactNumberInput = cy.get('#emergencyContactContactNumber').clear()
+        const contactNumberInput = cy.get('#emergencyContactContactNumber')
+        contactNumberInput.clear()
         contactNumberInput.type(emergencyContactNumber)
         contactNumberInput.invoke('val').should('eq', emergencyContactNumber)
 
@@ -184,6 +201,8 @@ describe('Go to Home Page and', () => {
        
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
+
+        cy.url().should('include','account')
 
         /* CHECK ACCOUNT DETAILS */
         const accountDetailsTitle = cy.get(':nth-child(1) > .bg-white > form > .grid > :nth-child(2)')
@@ -225,9 +244,13 @@ describe('Go to Home Page and', () => {
        
         const settingsHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         settingsHeaderElement.should('contain', 'Settings')
-        
+
+        cy.url().should('include','settings')
+
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
+
+        cy.url().should('include','account')
 
         const accountDetailsTitle = cy.get(':nth-child(1) > .bg-white > form > .grid > :nth-child(2)')
         accountDetailsTitle.should('contain', 'Personal Details')

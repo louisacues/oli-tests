@@ -24,16 +24,25 @@ describe('Go to Home Page and', () => {
         const settingsHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         settingsHeaderElement.should('contain', 'Settings')
         
+        cy.url().should('include','settings')
+
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
 
+        cy.url().should('include','account')
+
         const companyButton = cy.contains('button', 'Company')
-        companyButton.should('contain', 'Company').click()
+        companyButton.should('contain', 'Company')
+        companyButton.click()
+
+        cy.url().should('include','company')
         
         const editDetailsElement = cy.get('.py-4 > .group')
         editDetailsElement.within(() => {
             cy.contains('button', 'Edit Details').click()
         })
+
+        cy.url().should('include','edit')
 
         const editCompanyDetailsTitle = cy.get('body').find('h3.text-xl.font-semibold')
         editCompanyDetailsTitle.should('contain', 'Edit Company Details')
@@ -43,12 +52,12 @@ describe('Go to Home Page and', () => {
             cy.get('h3').should('contain', 'Company Information')
         })
 
-
         /* COMPANY NAME */
         const companyNameElement = cy.contains('label', 'Company Name')
         companyNameElement.should('contain', 'Company Name')
 
-        const companyNameInput = cy.get('#companyName').clear()
+        const companyNameInput = cy.get('#companyName')
+        companyNameInput.clear()
         companyNameInput.type(companyName)
         companyNameInput.invoke('val').should('eq', companyName)
 
@@ -56,7 +65,8 @@ describe('Go to Home Page and', () => {
         const zipCodeElement = cy.contains('label', 'Zip Code')
         zipCodeElement.should('contain', 'Zip Code')
 
-        const zipCodeInput = cy.get('#zipCode').clear()
+        const zipCodeInput = cy.get('#zipCode')
+        zipCodeInput.clear()
         zipCodeInput.type(zipCode)
         zipCodeInput.invoke('val').should('eq', zipCode)
 
@@ -64,7 +74,8 @@ describe('Go to Home Page and', () => {
         const sssNumberElement = cy.contains('label', 'SSS No.')
         sssNumberElement.should('contain', 'SSS No.')
 
-        const sssNumberInput = cy.get('#SSSNo').clear()
+        const sssNumberInput = cy.get('#SSSNo')
+        sssNumberInput.clear()
         sssNumberInput.type(sssNo)
         sssNumberInput.invoke('val').should('eq', sssNo)
 
@@ -72,7 +83,8 @@ describe('Go to Home Page and', () => {
         const tradeNameElement = cy.contains('label', 'Trade Name')
         tradeNameElement.should('contain', 'Trade Name')
 
-        const tradeNameInput = cy.get('#tradeName').clear()
+        const tradeNameInput = cy.get('#tradeName')
+        tradeNameInput.clear()
         tradeNameInput.type(tradeName)
         tradeNameInput.invoke('val').should('eq', tradeName)
 
@@ -80,7 +92,8 @@ describe('Go to Home Page and', () => {
         const contactBusinessNumberElement = cy.contains('label', 'Contact Business Number')
         contactBusinessNumberElement.should('contain', 'Contact Business Number')
 
-        const contactBusinessNumberInput = cy.get('#contactBusinessNumber').clear()
+        const contactBusinessNumberInput = cy.get('#contactBusinessNumber')
+        contactBusinessNumberInput.clear()
         contactBusinessNumberInput.type(businessNumber)
         contactBusinessNumberInput.invoke('val').should('eq', businessNumber)
 
@@ -88,7 +101,8 @@ describe('Go to Home Page and', () => {
         const hdmfNumberElement = cy.contains('label', 'HDMF No.')
         hdmfNumberElement.should('contain', 'HDMF No.')
 
-        const hdmfNumberInput = cy.get('#HDMFNo').clear()
+        const hdmfNumberInput = cy.get('#HDMFNo')
+        hdmfNumberInput.clear()
         hdmfNumberInput.type(hdmfNumber)
         hdmfNumberInput.invoke('val').should('eq', hdmfNumber)
 
@@ -104,7 +118,8 @@ describe('Go to Home Page and', () => {
         const contactBusinessEmailElement = cy.contains('label', 'Contact Business Email')
         contactBusinessEmailElement.should('contain', 'Contact Business Email')
 
-        const contactBusinessEmailInput = cy.get('#contactBusinessEmail').clear()
+        const contactBusinessEmailInput = cy.get('#contactBusinessEmail')
+        contactBusinessEmailInput.clear()
         contactBusinessEmailInput.type(contactBusinessEmail)
         contactBusinessEmailInput.invoke('val').should('eq', contactBusinessEmail)
 
@@ -128,7 +143,8 @@ describe('Go to Home Page and', () => {
         const certificateOfIncorporationNumberElement = cy.contains('label', 'Certificate of Incorporation Number')
         certificateOfIncorporationNumberElement.should('contain', 'Certificate of Incorporation Number')
 
-        const certificateOfIncorporationNumberInput = cy.get('#certificateOfIncorporationNumber').clear()
+        const certificateOfIncorporationNumberInput = cy.get('#certificateOfIncorporationNumber')
+        certificateOfIncorporationNumberInput.clear()
         certificateOfIncorporationNumberInput.type(certificateOfIncorporationNumber)
         certificateOfIncorporationNumberInput.invoke('val').should('eq', certificateOfIncorporationNumber)
 
@@ -160,7 +176,8 @@ describe('Go to Home Page and', () => {
         const principalBusinessAddressElement = cy.contains('label', 'Principal Business Address')
         principalBusinessAddressElement.should('contain', 'Principal Business Address')
 
-        const principalBusinessAddressInput = cy.get('#principalBusinessAddress').clear()
+        const principalBusinessAddressInput = cy.get('#principalBusinessAddress')
+        principalBusinessAddressInput.clear()
         principalBusinessAddressInput.type(principalBusinessAddress)
         principalBusinessAddressInput.invoke('val').should('eq', principalBusinessAddress)
 
@@ -168,7 +185,8 @@ describe('Go to Home Page and', () => {
         const phicNoElement = cy.contains('label', 'PHIC No.')
         phicNoElement.should('contain', 'PHIC No.')
 
-        const phicNoInput = cy.get('#PHICNo').clear()
+        const phicNoInput = cy.get('#PHICNo')
+        phicNoInput.clear()
         phicNoInput.type(phicNo)
         phicNoInput.invoke('val').should('eq', phicNo)
 
@@ -185,7 +203,8 @@ describe('Go to Home Page and', () => {
         projectHeaderElement.should('contain', 'Dashboard')
 
         const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('exist').click()
+        accountHeaderElement.should('exist')
+        accountHeaderElement.click()
 
         const settingsButtonElement = cy.get('.py-1')
         settingsButtonElement.within(() => {
@@ -194,12 +213,26 @@ describe('Go to Home Page and', () => {
        
         const settingsHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         settingsHeaderElement.should('contain', 'Settings')
-        
+
+        cy.url().should('include','settings')
+
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
 
+        cy.url().should('include','account')
+
         const companyButton = cy.contains('button', 'Company')
-        companyButton.should('contain', 'Company').click()
+        companyButton.should('contain', 'Company')
+        companyButton.click()
+
+        cy.url().should('include','company')
+        
+        const editDetailsElement = cy.get('.py-4 > .group')
+        editDetailsElement.within(() => {
+            cy.contains('button', 'Edit Details').click()
+        })
+
+        cy.url().should('include','edit')
         
         const companyInformationElement = cy.get('.p-6')
         companyInformationElement.should('contain', 'Company Information')
@@ -225,7 +258,7 @@ describe('Go to Home Page and', () => {
   })
 
 
-  it.only('should be able to update company profile picture', () => {
+  it('should be able to update company profile picture', () => {
        
         const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         projectHeaderElement.should('contain', 'Dashboard')
@@ -241,11 +274,18 @@ describe('Go to Home Page and', () => {
         const settingsHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
         settingsHeaderElement.should('contain', 'Settings')
         
+        cy.url().should('include','settings')
+
         const accountButton = cy.contains('button', 'Account')
         accountButton.should('contain', 'Account')
 
+        cy.url().should('include','account')
+
         const companyButton = cy.contains('button', 'Company')
-        companyButton.should('contain', 'Company').click()
+        companyButton.should('contain', 'Company')
+        companyButton.click()
+
+        cy.url().should('include','company')
         
         const editDetailsElement = cy.get('.py-4 > .group')
         editDetailsElement.within(() => {
