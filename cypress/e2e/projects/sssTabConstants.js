@@ -1,0 +1,5 @@
+export const sssHeadingText = 'SSS: Social Security System - 2024'
+export const sssAugustHeadingText = 'SSS - August - 2024'
+export const clientName = 'Anthony Corp'
+export const noteInputText = 'Sample Note'
+export const commentContent = 'Sample Comment'

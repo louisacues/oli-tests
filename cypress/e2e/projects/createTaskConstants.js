@@ -1,0 +1,5 @@
+export const newtaskFieldTitle = 'Anthony Task'
+export const taskDescriptionTitle = 'Sample Task'
+export const projectTitleHeader = 'Test Anthony Project'
+export const reviewNoteContent = 'Sample Review'
+export const commentContent = 'Sample Comment'

@@ -1,0 +1,5 @@
+export const phicHeadingText = 'PHIC: Philippine Health Insurance Corporation - 2024'
+export const phicAugustHeadingText = 'PHIC - August - 2024'
+export const clientName = 'Anthony Corp'
+export const noteInputText = 'Sample Note'
+export const commentContent = 'Sample Comment'

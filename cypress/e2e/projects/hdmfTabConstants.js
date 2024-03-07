@@ -1,0 +1,5 @@
+export const hdmfHeadingText = 'HDMF: Home Development Mutual Fund - 2024'
+export const hdmfAugustHeadingText = 'HDMF - August - 2024'
+export const clientName = 'Anthony Corp'
+export const noteInputText = 'Sample Note'
+export const commentContent = 'Sample Comment'
