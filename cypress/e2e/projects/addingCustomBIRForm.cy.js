@@ -12,6 +12,7 @@ describe('Adding Custom BIR form',()=>{
         cy.wait(200)
         const dashboardElement = cy.get('body').find('h2.text-xl.font-semibold')
         dashboardElement.should('contain', 'Dashboard')
+        cy.url().should('eq','https://app-dev.oli.com.ph/')
     })
     it('Adding Custom BIR Form',()=>{
         cy.get('div.relative.flex-row.space-y-3').should('not.exist')
@@ -55,6 +56,7 @@ describe('Adding Custom BIR form',()=>{
     it('add client, note, comment, start date, due date, assign member, update status, and delete form',()=>{
         goToCustomBirFormsPage()
         viewClientButton()
+        cy.url().should('include','form/tasks')
         addClientButton()
         selectClientOnDropDown().contains(clientName).should('contain.text',clientName).click()
         addSelectedClient()

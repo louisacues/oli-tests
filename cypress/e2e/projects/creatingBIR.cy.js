@@ -12,6 +12,7 @@ describe('Creating BIR Special Form',()=>{
         cy.wait(200)
         const dashboardElement = cy.get('body').find('h2.text-xl.font-semibold')
         dashboardElement.should('contain', 'Dashboard')
+        cy.url().should('eq','https://app-dev.oli.com.ph/')
       })
     it('should be able to see BIR Form type and description',()=>{
         goToBirFormsPage()
@@ -21,15 +22,18 @@ describe('Creating BIR Special Form',()=>{
     it('view and add client',()=>{
         goToBirFormsPage()
         viewClientButton()
+        cy.url().should('eq','https://app-dev.oli.com.ph/form/tasks?groupId=clslca54o007xct8jszk49cuf&templateId=clslca54y007yct8jvcyz4qkj&year=2024')
         addClientButton()
         selectClientOnDropDown().contains(clientName).should('contain.text',clientName).click()
         addSelectedClient()
     })
-    it('add note, comment, start date, due date, assign member, update status, and delete form',()=>{
+    it.only('add note, comment, start date, due date, assign member, update status, and delete form',()=>{
         goToBirFormsPage()
         viewClientButton()
+        cy.url().should('eq','https://app-dev.oli.com.ph/form/tasks?groupId=clslca54o007xct8jszk49cuf&templateId=clslca54y007yct8jvcyz4qkj&year=2024')
         cy.wait(3000)
         const openClient = cy.get('div.col-span-3')
+        cy.url().should('include', 'groupId=clslca54o007xct8jszk49cuf&templateId=clslca54y007yct8jvcyz4qkj&year=2024')
         openClient.contains(clientName).should('contain.text',clientName).click()
 
         const clientNameHeader = cy.get('div.flex.px-4.space-x-2.mb-10.pb-10.rounded-b-xl.bg-white')

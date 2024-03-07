@@ -12,6 +12,7 @@ describe('Creating Business Document Special Form',()=>{
         cy.wait(200)
         const dashboardElement = cy.get('body').find('h2.text-xl.font-semibold')
         dashboardElement.should('contain', 'Dashboard')
+        cy.url().should('eq','https://app-dev.oli.com.ph/')
     })
     it('should be able to see business document header',()=>{
         cy.wait(300)
@@ -23,6 +24,7 @@ describe('Creating Business Document Special Form',()=>{
         cy.wait(300)
         goToBusinessDocumentPage()
         viewClientButton()
+        cy.url().should('eq','https://app-dev.oli.com.ph/form/tasks?groupId=cloxcuqsi002plewsrcb1ki9u&templateId=cloxcuqwu002wlews5fj9rm9v&year=2024')
         const projectHeaderElement = cy.get('h1.text-2xl.font-semibold')
         projectHeaderElement.should('contain.text','Certificate of Incorporation - 2024')
         addClientButton()
@@ -34,9 +36,10 @@ describe('Creating Business Document Special Form',()=>{
         cy.wait(300)
         goToBusinessDocumentPage()
         viewClientButton()
+        cy.url().should('eq','https://app-dev.oli.com.ph/form/tasks?groupId=cloxcuqsi002plewsrcb1ki9u&templateId=cloxcuqwu002wlews5fj9rm9v&year=2024')
         const openClient = cy.get('div.col-span-3')
         openClient.contains(clientName).should('contain.text',clientName).click()
-
+        cy.url().should('include','groupId=cloxcuqsi002plewsrcb1ki9u&templateId=cloxcuqwu002wlews5fj9rm9v&year=2024')
         const clientNameHeader = cy.get('div.flex.px-4.space-x-2.mb-10.pb-10.rounded-b-xl.bg-white')
         clientNameHeader.within(()=>{
             cy.get('div.flex.flex-col').contains(clientName).should('contain.text',clientName)
