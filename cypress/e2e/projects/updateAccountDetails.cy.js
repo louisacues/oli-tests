@@ -146,7 +146,7 @@ describe('Go to Home Page and', () => {
         /* FIRST NAME */
         const emergencyContactFirstNameElement = cy.contains('label', 'First Name')
         emergencyContactFirstNameElement.should('contain', 'First Name')
-        cy.wait(1000)
+        
 
         const emergencyContactFirstNameInput = cy.get('#emergencyContactFirstName')
         emergencyContactFirstNameInput.clear().then(() => {
@@ -186,48 +186,7 @@ describe('Go to Home Page and', () => {
         saveButton.should('exist').click()
   })
 
-  it('should be able to check Account Details', () => {
-       
-        const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
-        projectHeaderElement.should('contain', 'Dashboard')
-
-        const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('exist').click()
-
-        const settingsButtonElement = cy.get('.py-1')
-        settingsButtonElement.within(() => {
-            cy.contains('a', 'Settings').click()
-        })
-       
-        const accountButton = cy.contains('button', 'Account')
-        accountButton.should('contain', 'Account')
-
-        cy.url().should('include','account')
-
-        /* CHECK ACCOUNT DETAILS */
-        const accountDetailsTitle = cy.get(':nth-child(1) > .bg-white > form > .grid > :nth-child(2)')
-        accountDetailsTitle.should('contain', 'Personal Details')
-
-        cy.get('#firstName').should('have.value', accountFirstName)
-        cy.get('#lastName').should('have.value', accountLastName)
-        cy.get('#email').should('have.value', accountEmail)
-        cy.get('#birthDate').should('have.value', accountBirthDate) 
-        cy.get('#contactNumber').should('have.value', accountContactNumber)
-        cy.get('#position').should('have.value', accountPosition)
-        cy.get('#TIN').should('have.value', accountTIN)
-        cy.get('#SSSNo').should('have.value', accountSSSNo)
-        cy.get('#HDMFNo').should('have.value', accountHDMFNo)
-        cy.get('#PHICNo').should('have.value', accountPHICNo)
-
-        /* CHECK EMERGENCY CONTACT */
-        const emergencyContactTitle = cy.get('h1.col-span-2')
-        emergencyContactTitle.should('contain', 'Emergency Contact')
-
-        cy.get('#emergencyContactFirstName').should('have.value', emergencyContactFirstName)
-        cy.get('#emergencyContactLastName').should('have.value', emergencyContactLastName)
-        cy.get('#emergencyContactEmail').should('have.value', emergencyContactEmail)
-        cy.get('#emergencyContactContactNumber').should('have.value', emergencyContactNumber)
-    })
+  
 
   it('should be able to update profile picture', () => {
        

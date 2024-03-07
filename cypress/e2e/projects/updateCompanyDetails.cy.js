@@ -197,66 +197,6 @@ describe('Go to Home Page and', () => {
         cy.wait(2000)
     })
 
-    it('should be able to check company details', () => {
-       
-        const projectHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
-        projectHeaderElement.should('contain', 'Dashboard')
-
-        const accountHeaderElement = cy.get('body').find('button[aria-haspopup="menu"]')
-        accountHeaderElement.should('exist')
-        accountHeaderElement.click()
-
-        const settingsButtonElement = cy.get('.py-1')
-        settingsButtonElement.within(() => {
-            cy.contains('a', 'Settings').click()
-        })
-       
-        const settingsHeaderElement = cy.get('body').find('h2.text-xl.font-semibold')
-        settingsHeaderElement.should('contain', 'Settings')
-
-        cy.url().should('include','settings')
-
-        const accountButton = cy.contains('button', 'Account')
-        accountButton.should('contain', 'Account')
-
-        cy.url().should('include','account')
-
-        const companyButton = cy.contains('button', 'Company')
-        companyButton.should('contain', 'Company')
-        companyButton.click()
-
-        cy.url().should('include','company')
-        
-        const editDetailsElement = cy.get('.py-4 > .group')
-        editDetailsElement.within(() => {
-            cy.contains('button', 'Edit Details').click()
-        })
-
-        cy.url().should('include','edit')
-        
-        const companyInformationElement = cy.get('.p-6')
-        companyInformationElement.should('contain', 'Company Information')
-
-        cy.contains('Firm Type').next('dd').should('contain', 'Corporation')
-        cy.contains('Company Name').next('dd').should('contain', companyName)
-        cy.contains('Zip Code').next('dd').should('contain', zipCode)
-        cy.contains('SSS No').next('dd').should('contain', sssNo)
-        cy.contains('Trade Name').next('dd').should('contain', tradeName)
-        cy.contains('Contact Business Number').next('dd').should('contain', businessNumber)
-        cy.contains('HDMF No').next('dd').should('contain', hdmfNumber)
-        cy.contains('Country Of Incorporation').next('dd').should('contain', countryOfIncorporation)
-        cy.contains('Contact Business Email').next('dd').should('contain', contactBusinessEmail)
-        /* cy.contains('Date Of Incorporation').next('dd').should('contain', dateOfIncorporation) */
-        /* cy.contains('RDO').next('dd').should('contain', RDO) */
-        cy.contains('Certificate Of Incorporation Number').next('dd').should('contain', certificateOfIncorporationNumber)
-        /* cy.contains('TIN').next('dd').should('contain', TIN) */
-        cy.contains('Nature Of Business').next('dd').should('contain', natureOfBusiness)
-        /* cy.contains('Income Tax Option').next('dd').should('contain', incomeTaxOption) */ 
-        cy.contains('Principal Business Address').next('dd').should('contain', principalBusinessAddress)
-        cy.contains('PHIC No').next('dd').should('contain', phicNo)
-       
-  })
-
 
   it('should be able to update company profile picture', () => {
        

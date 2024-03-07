@@ -27,8 +27,7 @@ describe('Go to Projects', () => {
       })    
 
     const manageButton = cy.contains('button', 'Manage')
-    manageButton.should('contain', 'Manage')
-    manageButton.click()
+    manageButton.should('contain', 'Manage').click()
 
     const deleteButton = cy.contains('a', 'Delete Project')
     deleteButton.should('contain', 'Delete Project')
