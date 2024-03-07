@@ -16,6 +16,7 @@ describe('Add Task on Projects Page', () => {
         dashboardElement.should('contain', 'Projects')
     })
     it('should be able to add task and description then delete', () => {
+        cy.url().should('include', 'projects')
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
             cy.contains('Anthony Corp').click()
@@ -36,7 +37,7 @@ describe('Add Task on Projects Page', () => {
         const addButton = cy.contains('Add')
         addButton.should('exist')
         addButton.click()
-
+        cy.url().should('include', 'tasks')
         const newTaskTitle = cy.contains('textarea', newtaskFieldTitle)
         newTaskTitle.should('exist')
 
@@ -64,6 +65,7 @@ describe('Add Task on Projects Page', () => {
     })
 
     it('should be able to add task, description, and review notes then delete', () => {
+        cy.url().should('include', 'projects')
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
             cy.contains('Anthony Corp').click()
@@ -84,7 +86,7 @@ describe('Add Task on Projects Page', () => {
         const addButton = cy.contains('Add')
         addButton.should('exist')
         addButton.click()
-
+        cy.url().should('include', 'tasks')
         const newTaskTitle = cy.contains('textarea', newtaskFieldTitle)
         newTaskTitle.should('exist')
 
@@ -126,6 +128,7 @@ describe('Add Task on Projects Page', () => {
 
 
     it('should be able to add task, description, review notes, and add comment then delete', () => {
+        cy.url().should('include', 'projects')
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
             cy.contains('Anthony Corp').click()
@@ -146,7 +149,7 @@ describe('Add Task on Projects Page', () => {
         const addButton = cy.contains('Add')
         addButton.should('exist')
         addButton.click()
-
+        cy.url().should('include', 'tasks')
         const newTaskTitle = cy.contains('textarea', newtaskFieldTitle)
         newTaskTitle.should('exist')
 
@@ -199,7 +202,7 @@ describe('Add Task on Projects Page', () => {
     })
 
     it('should be able add task, description, review notes, add comment, and pick a date then delete ', () => {
-
+        cy.url().should('include', 'projects')
         const projectTask = cy.get('div.flex.flex-col.w-full')
         projectTask.within(() => {
             cy.contains('Anthony Corp').click()
@@ -220,7 +223,7 @@ describe('Add Task on Projects Page', () => {
         const addButton = cy.contains('Add')
         addButton.should('exist')
         addButton.click()
-
+        cy.url().should('include', 'tasks')
         const newTaskTitle = cy.contains('textarea', newtaskFieldTitle)
         newTaskTitle.should('exist')
 
@@ -273,7 +276,7 @@ describe('Add Task on Projects Page', () => {
         })
 
         const dateValueCont = cy.get('div.relative.w-full.bg-transparent > div > div > div  > button > span')
-        dateValueCont.invoke('text').should('eq', '08-Feb-2024')
+        dateValueCont.invoke('text').should('eq', '07-Mar-2024')
 
         const projectDeleteButton = cy.get('div.w-full.col-span-full')
         projectDeleteButton.within(() => {
